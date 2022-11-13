@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: yellow;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   flex-direction: column;
+    color: black;
+    font-family: cursive;  
+    overflow: hidden;
+
+}
+.steps{
+display: flex;
+
+
+}
+.circle{
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 5px solid lightgray ;
+   color: lightgray;
+   
+}
+.proceed{
+    margin-left: 90px;
+
+}
+.circle.active{
+    border-color: green;
+    color: green;
+}
+.circle.active +  p{
+    opacity: 1;
+}
+.unit{
+    color: green;
+    min-height: 66px;
+    text-align: right;
+}
+p{
+    margin-top: 10px;
+}
+.disappear{
+    opacity: 0;
+}
+.circle.active::after{
+    background-color: green;
+}
+.proceed::after{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 5px;
+    background-color: lightgray;
+    top: 50%;   
+    right: 30px;
+    z-index: -20;
+}
+.btns{
+    margin-top: 80px;
+}
+.btn{
+    padding: 10px 20px;
+    background-color: slateblue;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,0.3);
+    color: white;
+    cursor: pointer;
+}
+.btn:active{
+    transform: scale(0.95);
+}
+.btn:hover{
+    opacity: 0.9;
+}
+.btn:disabled{
+    background-color: lightgray;
+}
+@media (max-width:500px) {
+    .proceed::after{
+        width: 40px;
+    }
+    .proceed{
+        margin-right: 25px;
+    }
+    .circle{
+        height: 30px;
+        width: 30px;
+    }
+}
